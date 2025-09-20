@@ -11,5 +11,9 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
     </style>
-
+    <style name="BottomNavTextAppearance" parent="@style/TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FBFADA</item>
+    </style>
 </resources>
