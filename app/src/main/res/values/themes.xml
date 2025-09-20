@@ -5,5 +5,11 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+
     <style name="Theme.PROG7314OutAbout" parent="Base.Theme.PROG7314OutAbout" />
+    <style name="RoundedImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
 </resources>
