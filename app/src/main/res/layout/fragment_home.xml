@@ -214,7 +214,7 @@
             android:padding="12dp"> <!-- white space inside card -->
 
             <!-- Image inside card with white padding around -->
-            <!-- Rounded Image -->
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/card_image"
                 android:layout_width="match_parent"
