@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavNoRipple" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:foreground">@android:color/transparent</item>
+    </style>
+
+</resources>

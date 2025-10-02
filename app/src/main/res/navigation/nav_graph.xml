@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.prog7314outabout.HomeFragment"
+        android:label="Home"/>
+
+    <fragment
+        android:id="@+id/browseFragment"
+        android:name="com.example.prog7314outabout.BrowseFragment"
+        android:label="Browse" >
+    <action
+        android:id="@+id/action_browseFragment_to_availableActivitiesFragment"
+        app:destination="@id/availableActivitiesFragment" />
+
+    <!-- future categories action -->
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/availableActivitiesFragment"
+        android:name="com.example.prog7314outabout.AvailableActivitiesFragment"
+        android:label="Available Activities" />
+</navigation>

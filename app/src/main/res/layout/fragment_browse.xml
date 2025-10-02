@@ -8,28 +8,42 @@
     android:background="#12372A"
     tools:context=".BrowseFragment">
 
+    <!-- Main container -->
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingTop="32dp"
         android:paddingBottom="32dp"
-        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <!-- Logo at the top -->
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_location"
+            android:contentDescription="@string/app_name"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
 
         <!-- Page Title -->
         <TextView
             android:id="@+id/browse_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/montserrat_bold"
             android:text="Browse"
             android:textColor="#FBFADA"
             android:textSize="28sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/montserrat_bold"
-            android:layout_marginBottom="32dp"/>
+            android:textStyle="bold" />
 
         <!-- Option 1: Available Activities -->
         <com.google.android.material.card.MaterialCardView
@@ -51,19 +65,19 @@
                     android:id="@+id/activities_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_bus"
+                    android:adjustViewBounds="true"
                     android:alpha="0.7"
-                    android:adjustViewBounds="true"/>
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_bus" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Available Activities"
                     android:textColor="#FBFADA"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/montserrat_bold"/>
+                    android:textSize="20sp" />
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -73,8 +87,8 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp">
@@ -88,38 +102,37 @@
                     android:id="@+id/categories_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_safari"
+                    android:adjustViewBounds="true"
                     android:alpha="0.7"
-                    android:adjustViewBounds="true"/>
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_safari" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Browse by Category"
                     android:textColor="#FBFADA"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/montserrat_bold"/>
+                    android:textSize="20sp" />
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
-    <!-- Navigation Bar -->
+    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="412dp"
-        android:layout_height="66dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="#12372A"
         app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
         app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
         app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
-        app:itemTextColor="@color/nav_item_color"
         app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
