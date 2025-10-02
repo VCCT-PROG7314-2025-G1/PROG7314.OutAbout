@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.button.MaterialButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +37,44 @@ class BrowseFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_browse, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val bottomNavigation = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigation.selectedItemId = R.id.nav_search
+        bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, HomeFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
+                R.id.nav_search -> true
+                R.id.nav_favourites -> {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, FavouritesFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
+                else -> true
+            }
+        }
+
+        val browseCategoryButton = view.findViewById<MaterialButton>(R.id.browscategorybtn)
+        browseCategoryButton.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, BrowseByCategoryFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     companion object {

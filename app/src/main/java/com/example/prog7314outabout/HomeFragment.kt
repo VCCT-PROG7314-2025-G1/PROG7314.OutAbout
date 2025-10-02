@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,6 +54,49 @@ class HomeFragment : Fragment() {
             Color.parseColor("#436850"),
             android.graphics.PorterDuff.Mode.SRC_IN
         )
+
+        val bottomNavigation = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigation.selectedItemId = R.id.nav_home
+        bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> true
+                R.id.nav_search -> {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, BrowseFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
+                R.id.nav_favourites -> {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, FavouritesFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
+                else -> true
+            }
+        }
+
+        val foodDrinkButton = view.findViewById<MaterialButton>(R.id.food_drink_btn)
+        foodDrinkButton.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, FoodDrinkFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        val shoppingButton = view.findViewById<MaterialButton>(R.id.shopping_btn)
+        shoppingButton.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, ShoppingFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
     companion object {
         @JvmStatic

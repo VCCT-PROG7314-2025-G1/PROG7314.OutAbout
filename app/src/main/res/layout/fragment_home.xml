@@ -97,6 +97,7 @@
 
         <!-- Button 1 -->
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/food_drink_btn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="51dp"
@@ -137,6 +138,7 @@
 
         <!-- Button 3 -->
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/shopping_btn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="51dp"
