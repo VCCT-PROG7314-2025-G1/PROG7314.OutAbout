@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">PROG7314.OutAbout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">AIzaSyBNfROFS08UaMNtj2UNMU9r7Npn9ZN3eMo</string>
 </resources>

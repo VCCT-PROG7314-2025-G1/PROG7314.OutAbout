@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/landingFragment">
+
+    <!-- Landing page -->
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.example.prog7314outabout.LandingFragment"
+        android:label="Landing Page"
+        tools:layout="@layout/fragment_landing">
+
+        <action
+            android:id="@+id/action_landingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_landingFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <!-- Login page -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.prog7314outabout.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+
+    <action
+        android:id="@+id/action_loginFragment_to_homeFragment"
+        app:destination="@id/homeFragment" />
+
+    </fragment>
+
+    <!-- Register page -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.prog7314outabout.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" >
+
+    <action
+        android:id="@+id/action_registerFragment_to_homeFragment"
+        app:destination="@id/homeFragment" />
+</fragment>
+
+    <!-- Home page -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.prog7314outabout.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/browseFragment"
+        android:name="com.example.prog7314outabout.BrowseFragment"
+        android:label="Browse" >
+    <action
+        android:id="@+id/action_browseFragment_to_availableActivitiesFragment"
+        app:destination="@id/availableActivitiesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/availableActivitiesFragment"
+        android:name="com.example.prog7314outabout.AvailableActivitiesFragment"
+        android:label="Available Activities" />
+
+</navigation>
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<navigation xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/nav_graph"-->
+<!--    app:startDestination="@id/landingFragment">-->
+
+
+<!--&lt;!&ndash;    <fragment&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/landingFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:name="com.example.prog7314outabout.LandingFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:label="Landing">&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <action&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/action_landingFragment_to_registerFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:destination="@id/registerFragment" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <action&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/action_landingFragment_to_loginFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:destination="@id/loginFragment" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </fragment>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    Landing page&ndash;&gt;-->
+<!--    <fragment-->
+<!--        android:id="@+id/landingFragment"-->
+<!--        android:name="com.example.prog7314outabout.LandingFragment"-->
+<!--        android:label="Landing Page"-->
+<!--        tools:layout="@layout/fragment_landing"/>-->
+<!--    <action-->
+<!--        android:id="@+id/action_landingFragment_to_loginFragment"-->
+<!--        app:destination="@id/loginFragment" />-->
+<!--    <action-->
+<!--        android:id="@+id/action_landingFragment_to_registerFragment"-->
+<!--        app:destination="@id/registerFragment" />-->
+
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/registerFragment"-->
+<!--        android:name="com.example.prog7314outabout.RegisterFragment"-->
+<!--        android:label="Register" />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/loginFragment"-->
+<!--        android:name="com.example.prog7314outabout.LoginFragment"-->
+<!--        android:label="Login" />-->
+
+<!--    &lt;!&ndash;    &lt;!&ndash; Landing page &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <fragment&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/landingFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:name="com.example.prog7314outabout.LandingFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:label="LandingFragment">&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <action&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/action_landingFragment_to_loginFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:destination="@id/loginFragment" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <action&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/action_landingFragment_to_registerFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:destination="@id/registerFragment" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </fragment>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Register page &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <fragment&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/registerFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:name="com.example.prog7314outabout.RegisterFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:label="Register"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Login page &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <fragment&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/loginFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:name="com.example.prog7314outabout.LoginFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:label="Login"/>&ndash;&gt;-->
+
+<!--</navigation>-->
