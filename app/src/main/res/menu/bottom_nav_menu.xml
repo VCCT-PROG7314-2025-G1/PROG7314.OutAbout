@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
@@ -6,18 +5,16 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/nav_search"
+        android:id="@+id/nav_browse"
         android:icon="@drawable/ic_search"
         android:title="Browse" />
-
     <item
-        android:id="@+id/nav_favourites"
+        android:id="@+id/nav_favourite"
         android:icon="@drawable/ic_favorite"
-        android:title="Favourites" />
+        android:title="Favorite" />
 
     <item
         android:id="@+id/nav_account"
         android:icon="@drawable/ic_account"
         android:title="Account" />
-
 </menu>
