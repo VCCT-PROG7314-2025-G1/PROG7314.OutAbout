@@ -8,24 +8,73 @@
     android:background="#12372A"
     tools:context=".AvailableActivitiesFragment">
 
+    <!-- Header: Back button + App Logo -->
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Back"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="#FBFADA" />
+
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="318dp"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:src="@drawable/ic_location" />
+    </LinearLayout>
+
+    <!-- Page title -->
+    <TextView
+        android:id="@+id/availableHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Activities"
+        android:textColor="#FBFADA"
+        android:textSize="28sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/header_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <!-- Scrollable content above the nav bar -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/availableHeading"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/Llayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingTop="16dp"
-            android:paddingBottom="32dp"
-            android:gravity="center_horizontal">
+            android:paddingTop="4dp"
+            android:paddingBottom="32dp">
 
             <!-- Location container -->
 
@@ -35,19 +84,9 @@
                 android:layout_width="16dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <!-- Page title -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Available Activities"
-                android:textColor="#FBFADA"
-                android:textSize="28sp"
-                android:fontFamily="@font/montserrat_bold"
-                android:layout_marginBottom="24dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Activity Cards -->
             <!-- Card 1 -->
@@ -61,6 +100,7 @@
                 app:cardElevation="6dp">
 
                 <RelativeLayout
+                    android:id="@+id/Rlayout_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="16dp">
@@ -68,18 +108,18 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img_dunes"
-                        android:alpha="0.7"/>
+                        android:src="@drawable/img_dunes" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat_bold"
                         android:text="Atlantis Dunes"
                         android:textColor="#FBFADA"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_bold"/>
+                        android:textSize="20sp" />
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -94,6 +134,7 @@
                 app:cardElevation="6dp">
 
                 <RelativeLayout
+                    android:id="@+id/Rlayout_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="16dp">
@@ -101,18 +142,18 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img_tram"
-                        android:alpha="0.7"/>
+                        android:src="@drawable/img_tram" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat_bold"
                         android:text="Franschoek Wine Tram"
                         android:textColor="#FBFADA"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_bold"/>
+                        android:textSize="20sp" />
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -134,18 +175,18 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img_safari"
-                        android:alpha="0.7"/>
+                        android:src="@drawable/img_safari" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat_bold"
                         android:text="Sunset Game Drive"
                         android:textColor="#FBFADA"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_bold"/>
+                        android:textSize="20sp" />
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -169,19 +210,19 @@
                         android:id="@+id/card_image4"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
+                        android:layout_marginBottom="8dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/img_aqua"
-                        app:shapeAppearanceOverlay="@style/RoundedImage"
-                        android:layout_marginBottom="8dp"/>
+                        app:shapeAppearanceOverlay="@style/RoundedImage" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
                         android:text="Two Oceans Aquarium"
                         android:textColor="#12372A"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/montserrat_regular"/>
+                        android:textSize="16sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -205,19 +246,19 @@
                         android:id="@+id/card_image5"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
+                        android:layout_marginBottom="8dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/img_beach"
-                        app:shapeAppearanceOverlay="@style/RoundedImage"
-                        android:layout_marginBottom="8dp"/>
+                        app:shapeAppearanceOverlay="@style/RoundedImage" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
                         android:text="Boulders Beach"
                         android:textColor="#12372A"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/montserrat_regular"/>
+                        android:textSize="16sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>

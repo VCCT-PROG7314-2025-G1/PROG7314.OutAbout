@@ -85,11 +85,29 @@ class HomeFragment : Fragment() {
                 .commit()
         }
 
+        // Things to do button
+        val thingsToDoButton = view.findViewById<MaterialButton>(R.id.things_to_doBtn)
+        thingsToDoButton?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ThingsToDoFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
         // Shopping button
         val shoppingButton = view.findViewById<MaterialButton>(R.id.shopping_btn)
         shoppingButton?.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ShoppingFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        // Services button
+        val servicesButton = view.findViewById<MaterialButton>(R.id.servicesBtn)
+        servicesButton?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ServicesFragment())
                 .addToBackStack(null)
                 .commit()
         }

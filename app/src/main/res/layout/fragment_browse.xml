@@ -113,16 +113,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_bold"
                     android:paddingStart="24dp"
                     android:paddingEnd="24dp"
                     android:text="Browse by Category"
                     android:textAllCaps="false"
                     android:textColor="#FBFADA"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:cornerRadius="24dp"
-                    app:strokeWidth="0dp"
-                    android:backgroundTint="#436850" />
+                    app:strokeWidth="0dp" />
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 

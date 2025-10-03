@@ -74,6 +74,7 @@
 
         <!-- Button 2 -->
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/things_to_doBtn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="51dp"
@@ -115,6 +116,7 @@
 
         <!-- Button 4 -->
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/servicesBtn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="51dp"

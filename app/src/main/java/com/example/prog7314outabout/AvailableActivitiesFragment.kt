@@ -35,6 +35,20 @@ class AvailableActivitiesFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_available_activities, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Back button navigation
+        val backButton = view.findViewById<android.widget.ImageButton>(R.id.btn_back)
+        backButton.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
