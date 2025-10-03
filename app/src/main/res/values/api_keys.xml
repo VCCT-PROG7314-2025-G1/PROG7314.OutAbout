@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Google Platform API Keys -->
+    <!-- Replace with your actual Google Maps API key -->
+    <string name="google_maps_api_key">YOUR_GOOGLE_MAPS_API_KEY_HERE</string>
+    
+    <!-- Replace with your actual Google Places API key -->
+    <string name="google_places_api_key">YOUR_GOOGLE_PLACES_API_KEY_HERE</string>
+    
+    <!-- Eventbrite API Key -->
+    <!-- Replace with your actual Eventbrite API key -->
+    <string name="eventbrite_api_key">YOUR_EVENTBRITE_API_KEY_HERE</string>
+    
+    <!-- Eventbrite Base URL -->
+    <string name="eventbrite_base_url">https://www.eventbriteapi.com/v3/</string>
+</resources>
