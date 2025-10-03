@@ -9,20 +9,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.card.MaterialCardView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Home Fragment with navigation and cards.
  */
 class HomeFragment : Fragment() {
 
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
@@ -42,62 +38,64 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Find the dropdown ImageView
+        // Dropdown icon tint
         val dropdownIcon = view.findViewById<ImageView>(R.id.ic_dropdown_icon)
-
-        // Apply the green tint (#436850)
-        dropdownIcon.setColorFilter(
+        dropdownIcon?.setColorFilter(
             Color.parseColor("#436850"),
             android.graphics.PorterDuff.Mode.SRC_IN
         )
 
+        // Bottom Navigation setup
         val bottomNavigation = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNavigation.selectedItemId = R.id.nav_home
-        bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> true
-                R.id.nav_search -> {
-                    requireActivity().supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, BrowseFragment())
-                        .addToBackStack(null)
-                        .commit()
-                    true
+        bottomNavigation?.let {
+            it.selectedItemId = R.id.nav_home
+            it.setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.nav_home -> true
+                    R.id.nav_search -> {
+                        requireActivity().supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, BrowseFragment())
+                            .addToBackStack(null)
+                            .commit()
+                        true
+                    }
+                    R.id.nav_favourites -> {
+                        requireActivity().supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, FavouritesFragment())
+                            .addToBackStack(null)
+                            .commit()
+                        true
+                    }
+                    else -> true
                 }
-                R.id.nav_favourites -> {
-                    requireActivity().supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, FavouritesFragment())
-                        .addToBackStack(null)
-                        .commit()
-                    true
-                }
-                else -> true
             }
         }
 
+        // Food & Drink button
         val foodDrinkButton = view.findViewById<MaterialButton>(R.id.food_drink_btn)
-        foodDrinkButton.setOnClickListener {
-            requireActivity().supportFragmentManager
-                .beginTransaction()
+        foodDrinkButton?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FoodDrinkFragment())
                 .addToBackStack(null)
                 .commit()
         }
 
+        // Shopping button
         val shoppingButton = view.findViewById<MaterialButton>(R.id.shopping_btn)
-        shoppingButton.setOnClickListener {
-            requireActivity().supportFragmentManager
-                .beginTransaction()
+        shoppingButton?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ShoppingFragment())
                 .addToBackStack(null)
                 .commit()
         }
+
     }
+
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,12 +67,21 @@ class BrowseFragment : Fragment() {
                 else -> true
             }
         }
-
+        // ✅ Browse by Category card
         val browseCategoryButton = view.findViewById<MaterialButton>(R.id.browscategorybtn)
         browseCategoryButton.setOnClickListener {
             requireActivity().supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragment_container, BrowseByCategoryFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        // ✅ Available Activities card
+        val activitiesCard = view.findViewById<MaterialCardView>(R.id.card_activities)
+        activitiesCard?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AvailableActivitiesFragment())
                 .addToBackStack(null)
                 .commit()
         }

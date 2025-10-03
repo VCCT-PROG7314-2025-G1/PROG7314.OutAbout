@@ -5,13 +5,14 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/nav_browse"
+        android:id="@+id/nav_search"
         android:icon="@drawable/ic_search"
         android:title="Browse" />
+
     <item
-        android:id="@+id/nav_favourite"
+        android:id="@+id/nav_favourites"
         android:icon="@drawable/ic_favorite"
-        android:title="Favorite" />
+        android:title="Favourites" />
 
     <item
         android:id="@+id/nav_account"
