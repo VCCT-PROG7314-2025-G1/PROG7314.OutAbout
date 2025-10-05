@@ -97,6 +97,43 @@ class OutnAboutDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         db.close()
         return exists
     }
+
+    // Get user by username
+    fun getUser(username: String): User? {
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $USER_TABLE_NAME WHERE $COL_USERNAME = ?", arrayOf(username))
+        val user = if (cursor.moveToFirst()) {
+            User(
+                cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)),
+                cursor.getString(cursor.getColumnIndexOrThrow(COL_SURNAME)),
+                cursor.getString(cursor.getColumnIndexOrThrow(COL_USERNAME)),
+                cursor.getString(cursor.getColumnIndexOrThrow(COL_PASSWORD))
+            )
+        } else null
+        cursor.close()
+        db.close()
+        return user
+    }
+
+    // Update user info
+    fun updateUser(oldUsername: String, newFirst: String, newLast: String, newUsername: String, newPassword: String): Boolean {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put("name", newFirst)
+            put("surname", newLast)
+            put("username", newUsername)
+            put("password", newPassword)
+        }
+
+        val result = db.update("users", values, "username = ?", arrayOf(oldUsername))
+        db.close()
+        return result > 0
+    }
+
+
+    // User data class
+    data class User(val name: String, val surname: String, val username: String, val password: String)
+
 }
 
 

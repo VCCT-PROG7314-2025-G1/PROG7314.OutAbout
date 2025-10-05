@@ -1,6 +1,7 @@
 package com.example.prog7314outabout
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -76,6 +77,12 @@ class LoginFragment : Fragment() {
 
             // First check local SQLite database
             if (dbHelper.validateUser(username, password)) {
+                // after verifying login success
+                val sharedPref = requireActivity().getSharedPreferences("UserSession", Context.MODE_PRIVATE)
+                with(sharedPref.edit()) {
+                    putString("loggedInUsername", username) // save the username
+                    apply()
+                }
                 Toast.makeText(requireContext(), "Local login successful!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
             } else {

@@ -11,9 +11,16 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest
+import com.google.android.libraries.places.api.model.Place
+import android.widget.Toast
+import com.google.android.libraries.places.api.net.PlacesClient
+
 class HomeFragment : Fragment() {
 
 
+    private lateinit var placesClient: PlacesClient
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +34,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         // Find the dropdown ImageView
         val dropdownIcon = view.findViewById<ImageView>(R.id.ic_dropdown_icon)
 
@@ -35,6 +44,7 @@ class HomeFragment : Fragment() {
             Color.parseColor("#436850"),
             android.graphics.PorterDuff.Mode.SRC_IN
         )
+
 
         val bottomNavigation = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigation.selectedItemId = R.id.nav_home
@@ -57,9 +67,26 @@ class HomeFragment : Fragment() {
                         .commit()
                     true
                 }
+                R.id.nav_account -> {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment, AccountFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
                 else -> true
             }
         }
+
+        // Initialize Places API (only once)
+        if (!Places.isInitialized()) {
+            Places.initialize(requireContext(), "YOUR_API_KEY_HERE")
+        }
+        placesClient = Places.createClient(requireContext())
+
+        // Example call: show top-rated nearby places
+        loadTopRatedPlaces()
 
         val foodDrinkButton = view.findViewById<MaterialButton>(R.id.food_drink_btn)
         foodDrinkButton.setOnClickListener {
@@ -78,6 +105,57 @@ class HomeFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        // Things to do button
+        val thingsToDoButton = view.findViewById<MaterialButton>(R.id.things_to_do_btn)
+        thingsToDoButton?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, ThingsToDoFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+
+        // Services button
+        val servicesButton = view.findViewById<MaterialButton>(R.id.services_btn)
+        servicesButton?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, ServicesFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
     }
 
+    private fun loadTopRatedPlaces() {
+        val placeFields = listOf(
+            Place.Field.NAME,
+            Place.Field.RATING,
+            Place.Field.ADDRESS,
+            Place.Field.TYPES
+        )
+
+        val request = FindCurrentPlaceRequest.newInstance(placeFields)
+
+        if (requireActivity().checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION)
+            == android.content.pm.PackageManager.PERMISSION_GRANTED
+        ) {
+            val placeResult = placesClient.findCurrentPlace(request)
+            placeResult.addOnSuccessListener { response ->
+                val topPlaces = response.placeLikelihoods
+                    .filter { it.place.rating != null }
+                    .sortedByDescending { it.place.rating }
+                    .take(5)
+
+                // TODO: Replace this Toast with populating your Top Picks card dynamically
+                for (placeLikelihood in topPlaces) {
+                    val place = placeLikelihood.place
+                    Toast.makeText(requireContext(), "${place.name} - ${place.rating}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
 }
+
+
+

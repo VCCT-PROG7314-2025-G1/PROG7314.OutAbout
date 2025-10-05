@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
 
 class BrowseFragment : Fragment() {
 
@@ -20,6 +21,8 @@ class BrowseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         val bottomNavigation = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigation.selectedItemId = R.id.nav_browse
@@ -42,10 +45,18 @@ class BrowseFragment : Fragment() {
                         .commit()
                     true
                 }
+                R.id.nav_account -> {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment, AccountFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
                 else -> true
             }
         }
-
+        // ✅ Browse by Category card
         val browseCategoryButton = view.findViewById<MaterialButton>(R.id.browscategorybtn)
         browseCategoryButton.setOnClickListener {
             requireActivity().supportFragmentManager
@@ -54,6 +65,17 @@ class BrowseFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        // ✅ Available Activities card
+        val activitiesCard = view.findViewById<MaterialCardView>(R.id.card_activities)
+        activitiesCard?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, AvailableActivitiesFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
+
+
 
 }
