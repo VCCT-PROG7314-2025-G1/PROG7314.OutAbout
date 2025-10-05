@@ -41,6 +41,8 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
@@ -245,7 +247,57 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
+
+        <!-- Profile Photo Upload Section -->
+        <TextView
+            android:id="@+id/photo_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Upload Profile Photo"
+            android:textColor="#FBFADA"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_edittext"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_placeholder" />
+
+        <Button
+            android:id="@+id/uploadBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@null"
+            android:fontFamily="@font/montserrat_semibold"
+            android:padding="10dp"
+            android:text="Choose Photo"
+            android:textAllCaps="false"
+            android:textColor="#DBD4D7" />
+
+        <!-- Progress bar goes right under the "Register" title -->
+        <ProgressBar
+            android:id="@+id/registerProgressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="12dp"
+            android:max="7"
+            android:progress="0"
+            android:progressTint="#76ABAE"
+            android:backgroundTint="#436850" />
+
         <!-- Create A Profile Button -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
         <Button
             android:id="@+id/profileButton"
             android:layout_width="120dp"

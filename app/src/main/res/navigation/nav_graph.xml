@@ -51,8 +51,33 @@
         android:id="@+id/homeFragment"
         android:name="com.example.prog7314outabout.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_browseFragment"
+            app:destination="@id/browseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_accountFragment"
+            app:destination="@id/AccountFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_foodDrinkFragment"
+            app:destination="@id/foodDrinkFragment" />
 
+        <action
+            android:id="@+id/action_homeFragment_to_shoppingFragment"
+            app:destination="@id/shoppingFragment" />
+    </fragment>
+
+    <!-- Food Drink page -->
+    <fragment
+        android:id="@+id/foodDrinkFragment"
+        android:name="com.example.prog7314outabout.FoodDrinkFragment"
+        android:label="FoodnDrink"
+        tools:layout="@layout/fragment_food_drink" />
+
+<!--     Browse page-->
     <fragment
         android:id="@+id/browseFragment"
         android:name="com.example.prog7314outabout.BrowseFragment"
@@ -60,12 +85,51 @@
     <action
         android:id="@+id/action_browseFragment_to_availableActivitiesFragment"
         app:destination="@id/availableActivitiesFragment" />
+        <action
+            android:id="@+id/action_browseFragment_to_foodDrinkFragment"
+            app:destination="@id/foodDrinkFragment" />
+        <action
+            android:id="@+id/action_browseFragment_to_shoppingFragment"
+            app:destination="@id/shoppingFragment" />
+
     </fragment>
+
+    <!-- Favourites page -->
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.prog7314outabout.FavouritesFragment"
+        android:label="Favourites"/>
+
+    <!-- Shopping page -->
+    <fragment
+        android:id="@+id/shoppingFragment"
+        android:name="com.example.prog7314outabout.ShoppingFragment"
+        android:label="Shopping"
+        tools:layout="@layout/fragment_shopping" />
 
     <fragment
         android:id="@+id/availableActivitiesFragment"
         android:name="com.example.prog7314outabout.AvailableActivitiesFragment"
         android:label="Available Activities" />
+
+    <fragment
+        android:id="@+id/AccountFragment"
+        android:name="com.example.prog7314outabout.AccountFragment"
+        android:label="My Account" >
+    <action
+        android:id="@+id/action_accountFragment_to_editProfileFragment"
+        app:destination="@id/editProfileFragment" />
+
+        <action
+        android:id="@+id/action_accountFragment_to_landingFragment"
+        app:destination="@id/landingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.prog7314outabout.EditProfileFragment"
+        android:label="Edit Profile" />
+
 
 </navigation>
 

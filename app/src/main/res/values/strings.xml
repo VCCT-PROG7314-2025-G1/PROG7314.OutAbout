@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_web_client_id">AIzaSyBNfROFS08UaMNtj2UNMU9r7Npn9ZN3eMo</string>
+    <!-- Add your Google Maps / Places API key here -->
+    <!--    <string name="google_maps_key">AIzaSyBNfROFS08UaMNtj2UNMU9r7Npn9ZN3eMo</string>-->
+    <!--    <string name="google_maps_api" templateMergeStrategy="preserve" translatable="false">AIzaSyCK9aw3MDZuT3KQn6h5MWa4iiiB89uSNWI</string>-->
 </resources>

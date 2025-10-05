@@ -113,105 +113,6 @@
     </GridLayout>
 
 
-    <!--    &lt;!&ndash; Categories Buttons &ndash;&gt;-->
-
-<!--    <GridLayout-->
-<!--        android:id="@+id/categories_grid"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="32dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:columnCount="2"-->
-<!--        android:rowCount="2"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.444"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/categories_title">-->
-
-<!--        &lt;!&ndash; Button 1 &ndash;&gt;-->
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/food_drink_btn"-->
-<!--            style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="51dp"-->
-<!--            android:layout_columnWeight="1"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:backgroundTint="#436850"-->
-<!--            android:fontFamily="@font/montserrat_alternates"-->
-<!--            android:lineHeight="20sp"-->
-<!--            android:paddingStart="4dp"-->
-<!--            android:paddingTop="10dp"-->
-<!--            android:paddingEnd="4dp"-->
-<!--            android:paddingBottom="10dp"-->
-<!--            android:text="Food &amp; Drink"-->
-<!--            android:textColor="#FBFADA"-->
-<!--            android:textSize="16sp"-->
-<!--            app:cornerRadius="50dp"-->
-<!--            app:strokeWidth="0dp" />-->
-
-<!--        &lt;!&ndash; Button 2 &ndash;&gt;-->
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="51dp"-->
-<!--            android:layout_columnWeight="1"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:backgroundTint="#436850"-->
-<!--            android:fontFamily="@font/montserrat_alternates"-->
-<!--            android:lineHeight="20sp"-->
-<!--            android:paddingStart="4dp"-->
-<!--            android:paddingTop="10dp"-->
-<!--            android:paddingEnd="4dp"-->
-<!--            android:paddingBottom="10dp"-->
-<!--            android:text="Things to do"-->
-<!--            android:textColor="#FBFADA"-->
-<!--            android:textSize="16sp"-->
-<!--            app:cornerRadius="50dp"-->
-<!--            app:strokeWidth="0dp" />-->
-
-<!--        &lt;!&ndash; Button 3 &ndash;&gt;-->
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/shopping_btn"-->
-<!--            style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="51dp"-->
-<!--            android:layout_columnWeight="1"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:backgroundTint="#436850"-->
-<!--            android:fontFamily="@font/montserrat_alternates"-->
-<!--            android:lineHeight="20sp"-->
-<!--            android:paddingStart="4dp"-->
-<!--            android:paddingTop="10dp"-->
-<!--            android:paddingEnd="4dp"-->
-<!--            android:paddingBottom="10dp"-->
-<!--            android:text="Shopping"-->
-<!--            android:textColor="#FBFADA"-->
-<!--            android:textSize="16sp"-->
-<!--            app:cornerRadius="50dp"-->
-<!--            app:strokeWidth="0dp" />-->
-
-<!--        &lt;!&ndash; Button 4 &ndash;&gt;-->
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="51dp"-->
-<!--            android:layout_columnWeight="1"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:backgroundTint="#436850"-->
-<!--            android:fontFamily="@font/montserrat_alternates"-->
-<!--            android:lineHeight="20sp"-->
-<!--            android:paddingStart="4dp"-->
-<!--            android:paddingTop="10dp"-->
-<!--            android:paddingEnd="4dp"-->
-<!--            android:paddingBottom="10dp"-->
-<!--            android:text="Services"-->
-<!--            android:textColor="#FBFADA"-->
-<!--            android:textSize="16sp"-->
-<!--            app:cornerRadius="50dp"-->
-<!--            app:strokeWidth="0dp" />-->
-
-<!--    </GridLayout>-->
-
     <!-- Top 5 Picks Title -->
 
     <!-- Activity Card View -->
@@ -260,13 +161,28 @@
                 app:shapeAppearanceOverlay="@style/RoundedImage" />
 
             <!-- Title text -->
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="Hop-On Hop-Off Bus Tour with Optional Cruise"
-                android:textColor="#12372A"
-                android:textSize="16sp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Hop-On Hop-Off Bus Tour with Optional Cruise"
+                    android:textColor="#12372A"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/heart"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_favorite_border" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

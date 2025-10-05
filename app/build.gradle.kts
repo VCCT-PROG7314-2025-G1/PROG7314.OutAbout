@@ -1,15 +1,21 @@
+
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services) // keep google services plugin
 }
 
+
 android {
 
     namespace = "com.example.prog7314outabout"
     compileSdk = 35
 
+
     defaultConfig {
+
         applicationId = "com.example.prog7314outabout"
         minSdk = 24
         targetSdk = 35
@@ -17,6 +23,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+
     }
 
     buildTypes {
@@ -39,6 +47,18 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    // ✅ Load your API key outside of defaultConfig scope
+    val localProperties = Properties().apply {
+        val file = rootProject.file("local.properties")
+        if (file.exists()) {
+            load(file.inputStream())
+        }
+    }
+
+    // ✅ Apply the placeholder substitution here
+    defaultConfig.manifestPlaceholders["MAPS_API_KEY"] =
+        localProperties.getProperty("MAPS_API_KEY") ?: ""
 }
 
 dependencies {
@@ -71,6 +91,7 @@ dependencies {
 // Firebase Auth
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation(libs.firebase.appcheck.debug)
+    implementation(libs.play.services.fitness)
 // Google Sign-In
 
     // Unit testing
@@ -79,6 +100,10 @@ dependencies {
     // Android testing
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+
+
+    //Google Places API
+    implementation("com.google.android.libraries.places:places:3.3.0")
 }
 
 

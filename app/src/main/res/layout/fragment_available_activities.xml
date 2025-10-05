@@ -9,6 +9,10 @@
     tools:context=".AvailableActivitiesFragment">
 
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
     <include
         android:id="@+id/location_dropdown5"
         layout="@layout/view_location_dropdown"
