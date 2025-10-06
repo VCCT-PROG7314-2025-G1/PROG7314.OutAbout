@@ -1,11 +1,4 @@
 # Out&About  
-### _Discover where the city takes you_
-
-[![Android](https://img.shields.io/badge/Platform-Android-brightgreen?logo=android)](https://developer.android.com/)
-[![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue?logo=kotlin)](https://kotlinlang.org/)
-[![Firebase](https://img.shields.io/badge/Backend-Firebase-orange?logo=firebase)](https://firebase.google.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ---
 
 ## Table of Contents
@@ -214,7 +207,7 @@ All AI-generated suggestions were reviewed and implemented manually, ensuring co
 
 ## Demonstration Video
 **Watch the Out&About Demo Video:**  
-[🔗 Click Here to View (Unlisted YouTube Link)](ADD YOUTUBE LINK HERE)
+[ Click Here to View (Unlisted YouTube Link)] (ADD YOUTUBE LINK HERE)
 
 The video showcases:
 - Registration & biometric login  
@@ -311,7 +304,7 @@ Before running this application, ensure you have:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/PROG7314.OutAbout-Aman.git
+https://github.com/maanie-waanie/PROG7314.OutAbout.git
 cd PROG7314.OutAbout-Aman
 ```
 
