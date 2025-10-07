@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#12372A"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".LandingFragment">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/getStarted_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Get Started"
+        android:textColor="#FBFADA"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="210dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/montserrat"
+        android:padding="14dp"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FBFADA"
+        android:textSize="18sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:id="@+id/orText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="false"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="OR"
+        android:textColor="#FBFADA"
+        android:textSize="20sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="210dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/montserrat"
+        android:padding="14dp"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#FBFADA"
+        android:textSize="18sp" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="62dp" />
+
+
+</LinearLayout>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="dark_green">#12372A</color>        <!-- background -->
+    <color name="cream">#FBFADA</color>
+    <color name="card_text">#12372A</color>         <!-- dark text on cream -->
+    <color name="white">#FFFFFF</color>
+    <color name="accent_green">#436850</color>      <!-- save button etc -->
 </resources>
