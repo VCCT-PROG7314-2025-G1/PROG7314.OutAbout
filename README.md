@@ -196,9 +196,12 @@ Tested on emulator and physical device
 
 ## AI Usage Declaration
 AI tools such as **ChatGPT (OpenAI)** were used responsibly for:
-- Structuring API endpoints and Firebase integration  
-- Refining UI text and improving code clarity  
-- Researching Kotlin patterns and Android SDK usage  
+-	Structuring API endpoints and Firebase integration
+-	Helping with coding errors: Dark Mode errors, Authentication errors, API issues, etc.
+-	Refining UI text and improving code clarity
+-	Researching Kotlin patterns and Android SDK usage
+-	Automated testing and merge questions
+ 
 
 All AI-generated suggestions were reviewed and implemented manually, ensuring compliance with academic integrity policies.
 
@@ -209,11 +212,11 @@ All AI-generated suggestions were reviewed and implemented manually, ensuring co
 (https://www.youtube.com/watch?v=3M6D5RCYpsE)
 
 The video showcases:
-•	Registration & login
-•	Event browsing and favourites
-•	Navigation between pages
-•	API Usage
-•	Multi-language interface
+-	Registration & login
+-	Event browsing and favourites
+-	Navigation between pages
+-	API Usage
+-	Multi-language interface
  
 
 ---
@@ -262,7 +265,24 @@ The video showcases:
 ### Personalization
 - **Favorites System**: Save and manage favorite places  
 - **User Preferences**: Customized recommendations  
-- **Profile Customization**: Personal account settings  
+- **Profile Customization**: Personal account settings
+
+## Innovative Features
+
+### 1)	Progress bar, that only completes when all required needs are met and is saved. 
+•	10% → start
+•	30% → FirebaseAuth success
+•	60% → Firestore write in progress
+•	100% → registration finished
+•	All text fields must be filled in
+•	All must in the correct format. 
+
+### 2)	Upload Profile Photo
+•	The user can decide whether or not they want to upload a profile photo, it is stored in firebase firestore. 
+
+### 3)	Dark mode
+•	As the app is already dark, when the switch is flipped the light mode is switched on. 
+
 
 ## Technical Stack
 
