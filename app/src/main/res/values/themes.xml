@@ -1,9 +1,34 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.PROG7314OutAbout" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <!-- Base app theme -->
+    <style name="Theme.PROG7314OutAbout" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize colors -->
+        <item name="colorPrimary">#12372A</item>
+        <item name="colorPrimaryVariant">#436850</item>
+        <item name="colorOnPrimary">#FBFADA</item>
+        <item name="colorSecondary">#ADBC9F</item>
+
+        <!-- Fix MaterialButton background/text -->
+        <item name="materialButtonStyle">@style/CustomButton</item>
     </style>
 
-    <style name="Theme.PROG7314OutAbout" parent="Base.Theme.PROG7314OutAbout" />
+    <style name="CustomButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">#436850</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:textColor">#FBFADA</item>
+    </style>
+
+    <!-- Rounded Image style -->
+    <style name="RoundedImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Bottom nav text appearance -->
+    <style name="BottomNavTextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FBFADA</item>
+    </style>
+
 </resources>
