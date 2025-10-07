@@ -20,12 +20,15 @@
 
 ## Overview
 **Out&About** is an Android mobile application that helps users **discover restaurants, coffee shops, markets, and events** in their area.  
-Whether you’re a **local resident** or **tourist**, the app offers a user-friendly way to explore, plan outings, and stay updated on local happenings.  
+Whether you’re a **local resident** or **tourist**, the app offers a user-friendly way to explore, plan outings, and stay updated on local happenings. Built with modern Android development practices, 
+the app provides an intuitive interface for finding restaurants, shopping centers, entertainment venues, 
+and various activities based on user preferences and location.
+
 
 Out&About integrates:
-- **Firebase** for authentication, real-time sync, and push notifications  
+- **Firebase** for authentication, real-time sync and storage
 - **Google Places API** for live event and location data  
-- **Biometric login** and **multi-language support** for accessibility and security  
+- **Biometric login** and **multi-language support** for accessibility and security (FINAL) 
 
 ---
 
@@ -60,18 +63,15 @@ Out&About integrates:
 
 ---
 
-## Features Summary
+## Features Summary for PART 2
 
 | Feature | Description |
 |----------|-------------|
 | **Single Sign-On (SSO)** | Secure login using Google/Facebook OAuth 2.0 |
-| **Biometric Authentication** | Fingerprint or FaceID for quick, secure access |
 | **Settings Menu** | Adjust language, notifications, and country preferences |
 | **REST API Integration** | Fetches live event and venue data |
 | **Offline Mode with Sync** | Cached data viewable without internet |
-| **Push Notifications** | Real-time alerts via Firebase Cloud Messaging |
 | **Favourites Page** | Save and access preferred events and places |
-| **Multi-Language Support** | English, Afrikaans, isiXhosa |
 | **Modern Branding** | Friendly UI with elegant green-and-cream palette |
 | **Firebase Backend** | Authentication, Firestore, Cloud Functions & Storage |
 | **Automated Testing** | GitHub Actions for build & test automation |
@@ -83,7 +83,7 @@ Out&About integrates:
 | Aspect | Original Plan | Final Implementation |
 |--------|----------------|----------------------|
 | **API** | Custom REST API | Firebase + Google Places API |
-| **Database** | SQL backend | Firebase Firestore (NoSQL, offline support) |
+| **Database** | SQL backend | Firebase Firestore (SQLite, offline support) |
 | **UI/UX** | Static mockups | Fully implemented Material Design UI |
 | **Notifications** | Planned | Implemented with Firebase Cloud Messaging |
 | **Languages** | English only | Added Afrikaans + isiXhosa |
@@ -99,7 +99,6 @@ Out&About integrates:
 - **Firebase Authentication:** Manages users and biometrics.
 - **Firebase Firestore:** Stores users, favourites, and settings.
 - **Firebase Cloud Functions:** Fetches event data from Google Places API.
-- **Firebase Cloud Messaging (FCM):** Handles push notifications.
 - **Google Places API:** Provides local event and venue data.
 
 ### Database Models
@@ -207,14 +206,15 @@ All AI-generated suggestions were reviewed and implemented manually, ensuring co
 
 ## Demonstration Video
 **Watch the Out&About Demo Video:**  
-[ Click Here to View (Unlisted YouTube Link)] (ADD YOUTUBE LINK HERE)
+(https://www.youtube.com/watch?v=3M6D5RCYpsE)
 
 The video showcases:
-- Registration & biometric login  
-- Event browsing and favourites  
-- Offline sync functionality  
-- Push notification example  
-- Multi-language interface  
+•	Registration & login
+•	Event browsing and favourites
+•	Navigation between pages
+•	API Usage
+•	Multi-language interface
+ 
 
 ---
 
@@ -227,18 +227,11 @@ The video showcases:
 ---
 
 ## Author
-**Developed by:** Debby Delport, Aman Adams, Zoe April, Khanyi Mabuza
-**Module:** PROG7314 – Programming 3D  
-**Institution:** The Independent Institute of Education (IIE), 2025  
+**Developed by:** Aman Adams (Group Leader), Debby Delport, Zoe Apriland Khanyi Mabuza
+**Module:** PROG7314 – Programming 3D 
 
 
 ---
-
-## Overview
-**OutAbout** is a comprehensive Android application designed to help users discover and explore local places,
-activities, and services in their area. Built with modern Android development practices, 
-the app provides an intuitive interface for finding restaurants, shopping centers, entertainment venues, 
-and various activities based on user preferences and location.
 
 ## Features
 
@@ -346,7 +339,7 @@ MAPS_API_KEY=your_google_maps_api_key_here
 - `AvailableActivitiesFragment`: Dynamic activity listings  
 
 ### **Database & Data Management**
-- `OutnAboutDBHelper`: SQLite database operations  
+- `OutnAboutDBHelper`: SQLite database operations (offline database)
 - `Place.kt`: Place data model  
 - `PlaceData.kt`: Place data management  
 - `PlacesAdapter.kt`: RecyclerView adapter for place listings  
@@ -395,12 +388,6 @@ The project includes comprehensive testing setup:
 - **Instrumented Tests**: Espresso for UI testing  
 - **Test Runner**: AndroidJUnitRunner for integration tests  
 
-## Future Enhancements
-- **Social Features**: User reviews and ratings  
-- **Offline Support**: Cached data for offline browsing  
-- **Push Notifications**: Location-based alerts  
-- **Advanced Filtering**: More sophisticated search options  
-- **Integration**: Social media sharing capabilities  
 
 ---
 **Note**: This application requires proper API key configuration and Firebase setup to function correctly. 
