@@ -1,0 +1,40 @@
+name: Android CI
+
+# Run on pushes and pull requests to main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout your code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Java environment for Gradle
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Step 3: Grant execute permission for gradlew
+      - name: Grant execute permission for Gradle
+        run: chmod +x gradlew
+
+      # Step 4: Build the project
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug
+
+      # Step 5: Run unit tests
+      - name: Run unit tests
+        run: ./gradlew test
+
+      # (Optional) Step 6: Run instrumented tests (requires emulator)
+      # - name: Run UI tests
+      #   run: ./gradlew connectedAndroidTest
