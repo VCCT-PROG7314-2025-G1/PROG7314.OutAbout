@@ -131,7 +131,7 @@ Continuous integration via **GitHub Actions** ensures:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/maanie-waanie/OutAndAbout.git
+git clone (https://github.com/VCCT-PROG7314-2025-G1/PROG7314.OutAbout.git)
 cd OutAndAbout
 ```
 
@@ -230,7 +230,7 @@ The video showcases:
 ---
 
 ## Author
-**Developed by:** Aman Adams (Group Leader), Debby Delport, Zoe Apriland Khanyi Mabuza
+**Developed by:** Aman Adams (Group Leader), Debby Delport, Zoe April and Khanyi Mabuza
 **Module:** PROG7314 – Programming 3D 
 
 
@@ -269,19 +269,19 @@ The video showcases:
 
 ## Innovative Features
 
-### 1)	Progress bar, that only completes when all required needs are met and is saved. 
-•	10% → start
-•	30% → FirebaseAuth success
-•	60% → Firestore write in progress
-•	100% → registration finished
-•	All text fields must be filled in
-•	All must in the correct format. 
+**1)	Progress bar, that only completes when all required needs are met and is saved**. 
+-	10% → start
+-	30% → FirebaseAuth success
+-	60% → Firestore write in progress
+-	100% → registration finished
+-	All text fields must be filled in
+-	All must in the correct format. 
 
-### 2)	Upload Profile Photo
-•	The user can decide whether or not they want to upload a profile photo, it is stored in firebase firestore. 
+**2)	Upload Profile Photo**
+-	The user can decide whether or not they want to upload a profile photo, it is stored in firebase firestore. 
 
-### 3)	Dark mode
-•	As the app is already dark, when the switch is flipped the light mode is switched on. 
+**3)	Dark mode**
+-	As the app is already dark, when the switch is flipped the light mode is switched on. 
 
 
 ## Technical Stack
